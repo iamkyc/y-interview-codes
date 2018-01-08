@@ -1,0 +1,160 @@
+body, ul, li{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+nav{
+	background-color:#2A98F1;
+	display:flex;
+	justify-content:center;
+	box-shadow:0px 3px 3px rgba(0,0,0,0.2);
+}
+
+nav .nav-items .nav-item{
+	display:inline-block;
+	color:#075DAD;
+	padding:15px 70px 12px 70px;
+	cursor:pointer;
+}
+
+nav .nav-items .active{
+	border-bottom:3px solid #14529B;
+	color:#FFFFFF;
+}
+
+.message-container{
+	padding:40px 0px;
+	overflow:auto;
+}
+
+.message{
+	width:520px;
+	height:60px;
+	margin:10px auto;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.message .message-checkbox{
+	margin:0px 35px;
+	position:relative;
+}
+
+.message .message-checkbox input[type=checkbox]{
+	margin:0px;
+	opacity:0;
+}
+
+.message .message-checkbox .checkmark {
+  position: absolute;
+  top:0;
+  left:-2px;
+  height: 13px;
+  width: 13px;
+  border:1px solid #333333;
+  border-radius: 2px;
+  cursor:pointer;
+}
+
+.message .message-checkbox .checkmark:after {
+	content:"✔";
+	position:absolute;
+	top:-5px;
+	display:none;
+}
+
+.message .message-checkbox input[type=checkbox]:checked + .checkmark:after {
+	display:block;
+}
+
+.message .message-info{
+	width:425px;
+	height:inherit;
+	border:1px solid #333333;
+	border-radius:7px;
+	display:flex;
+	align-items:center;
+}
+
+.message .message-info .message-img{
+	width:50px;
+	height:50px;
+	margin:0px 5px;
+	display:inline-block;
+}
+
+.message .message-info .message-title{
+	width:255px;
+	margin:0px 30px 0px 10px;
+	display:inline-block;
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	font-size:16px;
+	font-weight:normal;
+
+}
+.message .message-info .message-btn{
+	padding:3px 15px 4px 15px;
+	border:0px;
+	border-radius:4px;
+	background-color:#63B863;
+	color:#FFFFFF;
+	font-size:12px;
+	vertical-align:top;
+	cursor:pointer;
+	outline:none;
+}
+
+.message .message-info .message-btn:hover{
+	background-color:#408C40;
+}
+
+.action-bar{
+	position:fixed;
+	width:100vw;
+	/*bottom:0px;*/
+	background-color: #E8EAF6;
+	display:flex;
+	justify-content:center;
+}
+
+.action-bar .action-bar-btn{
+	margin:10px 20px;
+	padding:11px 10px 9px 10px;
+	border:0px;
+	border-radius:3px;
+	cursor:pointer;
+	outline:none;
+	position:relative;
+}
+
+.action-bar .action-bar-btn:active{
+	top:2px;
+	left:1px;
+	box-shadow:0px 0px;
+}
+
+.action-bar .red-btn{
+	background-color: #E31B23;
+	color:#FFFFFF;
+	box-shadow:1px 2px 2px #C02934;
+}
+
+.action-bar .white-btn{
+	background-color: #FFFFFF;
+	color:#333333;
+	box-shadow:1px 2px 2px rgba(0,0,0,0.2);
+}
+
+.show{
+	bottom:0px;
+	transition:0.5s;
+}
+
+.hide{
+	bottom:-60px;
+	transition:0.5s;
+}
