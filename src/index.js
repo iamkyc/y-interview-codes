@@ -65,7 +65,7 @@ class App extends Component{
 		this.setState({
 			checkedItems:checkedItems
 		})
-		
+		console.log(checkedItems);
 	}
 
 	_filterMessage(filter,messages=this.state.messages){
@@ -118,6 +118,7 @@ class App extends Component{
 							icon={message.msg_icon}
 							data={message}
 							onChange={this.handleMsgChecked.bind(this)}
+							checked={this.state.checkedItems.indexOf(message.msg_id)===-1 ? false : true}
 						/>
 					)}
 				</div>	

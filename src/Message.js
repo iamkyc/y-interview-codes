@@ -5,7 +5,7 @@ class Message extends Component{
 		super(props);
 		this.state={
 			id:this.props.id,
-			checked:false
+			checked:this.props.checked
 		}
 	}
 
@@ -20,15 +20,13 @@ class Message extends Component{
 				checked:!this.state.checked
 			});
 		}
-
-		console.log(this.props.onChange);
 	}
 
 	render(){
 		return(
 			<div className="message">
 				<label className="message-checkbox">
-					<input type="checkbox" checked={this.state.checked} onChange={this.handleCheck.bind(this)}/>
+					<input type="checkbox" checked={this.props.checked} onChange={this.handleCheck.bind(this)}/>
 					<span className="checkmark" />
 				</label>
 				<div className="message-info">
