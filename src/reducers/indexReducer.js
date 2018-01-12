@@ -1,6 +1,5 @@
 import { combineReducers } from 'redux';
 
-export const FILTER_MSG_DATA = 'FILTER_MSG_DATA';
 export const SELECT_FILTER = 'SELECT_FILTER';
 export const REQUEST_GET_DATA = 'REQUEST_GET_DATA';
 export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS';
@@ -24,18 +23,10 @@ function filter(state='ALL',action){
 function messages(state=[],action){
 	switch(action.type){
 		case GET_DATA_SUCCESS:
-			return action.msgData.messages
+			return action.msgData.messages;
+
 		case DELETE_CHECKED_ITEMS:
 			return action.newMsgs;
-		default:
-			return state
-	}
-}
-
-function filteredMessages(state=[],action){
-	switch(action.type){
-		case FILTER_MSG_DATA:
-			return action.msgData
 
 		default:
 			return state
@@ -46,15 +37,19 @@ function checkedItems(state=[],action){
 	switch(action.type){
 		case ADD_CHECKED_ITEMS:
 			return [...state,action.id];
+
 		case REMOVE_CHECKED_ITEMS:
 			return [
 				...state.slice(0,action.index),
 				...state.slice(action.index+1)
 			]
+
 		case DELETE_CHECKED_ITEMS:
 			return [];
+
 		case CANCEL_CHECKED_ITEMS:
 			return [];
+
 		default:
 			return state
 	}
@@ -64,17 +59,20 @@ function loadingData(state='none',action){
 	switch(action.type){
 		case REQUEST_GET_DATA:
 			return 'loading';
+
 		case GET_DATA_SUCCESS:
 			return 'success';
+
 		case GET_DATA_FAILURE:
 			return 'failed';
+			
 		default:
 			return state;
 	}
 }
 
 const messageApp = combineReducers({
-	filter,messages,filteredMessages,checkedItems,loadingData
+	filter,messages,checkedItems,loadingData
 })
 
 export default messageApp;
