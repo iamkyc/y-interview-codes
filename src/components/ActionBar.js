@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 
 class ActionBar extends Component{
 	handleDelete(){
-		if(this.props.onAction){
-			this.props.onAction('delete');
-		}
+		const {messages,checkedItems,actions} = this.props;
+		let newMessages = messages.filter((message) => 
+			checkedItems.indexOf(message.msg_id)===-1
+		)
+		actions.deleteCheckedItems(newMessages);
 	}
 
 	handleCancel(){
-		if(this.props.onAction){
-			this.props.onAction('cancel');
-		}
+		this.props.actions.cancelCheckedItems();
 	}
 
 	render(){
-		let className = `action-bar ${this.props.status}`
+		let className = `action-bar ${this.props.status}`;
 		return(
 			<div className={className}>
 				<button className="red-btn action-bar-btn" onClick={this.handleDelete.bind(this)}>DELETE</button>

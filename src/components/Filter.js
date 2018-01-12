@@ -1,18 +1,8 @@
 import React, {Component} from 'react';
 
 class Filter extends Component{
-	constructor(){
-		super();
-		this.state={
-			active:'ALL'
-		}
-	}
-
 	handleClick(val){
-		if(this.props.onClick){
-			this.props.onClick(val);
-		}
-		this.setState({active:val});
+		this.props.actions.selectFilter(val);
 	}
 
 	render(){
@@ -27,7 +17,7 @@ class Filter extends Component{
 				<ul className="nav-items">
 					{navItems.map((navItem) => 
 							<li 
-								className={this.state.active===navItem.key ? 'nav-item active' : 'nav-item'} 
+								className={this.props.filter===navItem.key ? 'nav-item active' : 'nav-item'} 
 								onClick={this.handleClick.bind(this,navItem.key)}
 								key={navItem.key}
 							>
