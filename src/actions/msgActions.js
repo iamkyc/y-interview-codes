@@ -38,6 +38,13 @@ export function getDataFailure(){
 	}
 }
 
+export function filterMsgData(msgData){
+	return {
+		type:'FILTER_MSG_DATA',
+		msgData
+	}
+}
+
 export function addCheckedItems(id){
 	return {
 		type:'ADD_CHECKED_ITEMS',
