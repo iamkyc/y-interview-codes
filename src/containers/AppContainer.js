@@ -46,7 +46,6 @@ function mapStateToProps(state){
 	return {
 		filter:state.filter,
 		messages:state.messages,
-		filteredMessages:state.filteredMessages,
 		checkedItems:state.checkedItems,
 		loadingStatus:state.loadingData
 	}

@@ -8,7 +8,7 @@ class MessageList extends Component{
 			return filter==='ALL' || message.msg_type===filter
 		})
 		if(loadingStatus==='none'){
-			return <h4 className="message-warning"></h4>
+			return <h4 className="message-warning">none loading messages</h4>
 		}
 		if(loadingStatus==='loading'){
 			return <h4 className="message-warning">Loading...</h4>

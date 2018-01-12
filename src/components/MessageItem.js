@@ -27,7 +27,7 @@ class MessageItem extends Component{
 				<div className="message-info">
 					<img className="message-img" src={this.props.icon} alt="" />
 					<h5 className="message-title">{this.props.title}</h5>
-					<a href="https://tw.yahoo.com/" target="_blank" className="message-btn">view</a>
+					<a href="https://tw.yahoo.com/" target="_blank" rel="noopener noreferrer" className="message-btn">view</a>
 				</div>
 			</div>
 		)
