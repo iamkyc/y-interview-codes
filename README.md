@@ -19,7 +19,7 @@
 #### components/MessageItem.js
 每一個message的原件，放置於MessageList之下  
   
-  
+---
 ### states
 放置於Reducers/indexReducer.js中，共有四個state
 
@@ -35,7 +35,7 @@
 #### loadingData
 紀錄API的載入狀態，有`none`、`loading`、`success`、`failed`四種型態  
   
-  
+---
 ### Actions
 放置於actions目錄下，依據actionBar、filter、message所驅動的actions，分別記錄在所屬的檔案中。
 
