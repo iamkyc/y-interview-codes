@@ -7,7 +7,6 @@ export const REMOVE_CHECKED_ITEMS = 'REMOVE_CHECKED_ITEMS';
 
 export function getData(){
 	return (dispatch) =>{
-		dispatch(requestGetData());
 		return 	fetch("https://jimmy319.github.io/challenge/list/")
 		.then((data) => data.json())
 		.then((msgData) =>{
@@ -18,6 +17,20 @@ export function getData(){
 			console.log(err)});
 	}
 }
+
+// export function getData(){
+// 	return (dispatch) =>{
+// 		dispatch(requestGetData());
+// 		return 	fetch("https://jimmy319.github.io/challenge/list/")
+// 		.then((data) => data.json())
+// 		.then((msgData) =>{
+// 			dispatch(getDataSuccess(msgData));
+// 		})
+// 		.catch((err) => {
+// 			dispatch(getDataFailure())
+// 			console.log(err)});
+// 	}
+// }
 
 export function requestGetData(){
 	return {
