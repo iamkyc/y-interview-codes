@@ -1,6 +1,7 @@
 ## y-interview
 
-使用react與redux，接收API資料的訊息後，可以選擇訊息的類別，勾選訊息與刪除訊息
+使用react與redux，接收API資料的訊息後，可以選擇訊息的類別，勾選訊息與刪除訊息  
+範例網頁請見 https://iamkyc.github.io/y-interview-pages/
 
 ### 元件結構
 * index.js
