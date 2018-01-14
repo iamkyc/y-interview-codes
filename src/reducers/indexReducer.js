@@ -56,24 +56,24 @@ function checkedItems(state=[],action){
 	}
 }
 
-// function loadingData(state='none',action){
-// 	switch(action.type){
-// 		case REQUEST_GET_DATA:
-// 			return 'loading';
+function loadingData(state='none',action){
+	switch(action.type){
+		case REQUEST_GET_DATA:
+			return 'loading';
 
-// 		case GET_DATA_SUCCESS:
-// 			return 'success';
+		case GET_DATA_SUCCESS:
+			return 'success';
 
-// 		case GET_DATA_FAILURE:
-// 			return 'failed';
+		case GET_DATA_FAILURE:
+			return 'failed';
 			
-// 		default:
-// 			return state;
-// 	}
-// }
+		default:
+			return state;
+	}
+}
 
 const messageApp = combineReducers({
-	filter,messages,checkedItems
+	filter,messages,checkedItems,loadingData
 })
 
 export default messageApp;
